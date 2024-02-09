@@ -1,0 +1,143 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(early(addPluginSbtFile="""C:\Users\OMISTAJA\AppData\Local\Temp\idea.sbt"""), None, None)
+[debug] > Exec(addPluginSbtFile="""C:\Users\OMISTAJA\AppData\Local\Temp\idea.sbt""", None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.9.8 (Amazon.com Inc. Java 17.0.8.1)
+[debug]       Load.loadUnit: plugins took 184.8684ms
+[debug]       Load.loadUnit: defsScala took 0.5518ms
+[debug] [Loading] Scanning directory C:\Users\OMISTAJA\.sbt\1.0\plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\OMISTAJA\.sbt\1.0\plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 53.8239 ms
+[debug]           Load.resolveProject(global-plugins) took 97.4567ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: C:\Users\OMISTAJA\.sbt\1.0\plugins, plugins: List(<none>))) took 199.0695ms
+[debug] [Loading] Done in C:\Users\OMISTAJA\.sbt\1.0\plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 248.8255ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.7966ms
+[debug]     Load.loadUnit(file:/C:/Users/OMISTAJA/.sbt/1.0/plugins/, ...) took 452.7461ms
+[debug]   Load.apply: load took 761.3231ms
+[debug]   Load.apply: resolveProjects took 9.0386ms
+[debug]   Load.apply: finalTransforms took 78.4502ms
+[debug]   Load.apply: config.delegates took 15.6145ms
+[debug]   Load.apply: Def.make(settings)... took 640.3124ms
+[debug]   Load.apply: structureIndex took 170.1752ms
+[debug]   Load.apply: mkStreams took 2.7671ms
+[info] loading global plugins from C:\Users\OMISTAJA\.sbt\1.0\plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 3638.6569ms
+[debug]           Load.loadUnit: plugins took 45.0397ms
+[debug]           Load.loadUnit: defsScala took 0.0055ms
+[debug] [Loading] Scanning directory C:\Users\OMISTAJA\OneDrive\IdeaProjects\Kasino\project
+[debug]             Load.loadUnit: mkEval took 9.0708ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\OMISTAJA\OneDrive\IdeaProjects\Kasino\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 3.2422 ms
+[info] loading settings for project kasino-build from idea.sbt ...
+[debug]               Load.resolveProject(kasino-build) took 4.9219ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id kasino-build, base: C:\Users\OMISTAJA\OneDrive\IdeaProjects\Kasino\project, plugins: List(<none>))) took 9.0558ms
+[debug] [Loading] Done in C:\Users\OMISTAJA\OneDrive\IdeaProjects\Kasino\project, returning: (kasino-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 242.6453ms
+[debug]           Load.loadUnit: cleanEvalClasses took 13.1752ms
+[debug]         Load.loadUnit(file:/C:/Users/OMISTAJA/OneDrive/IdeaProjects/Kasino/project/, ...) took 302.4872ms
+[debug]       Load.apply: load took 305.1611ms
+[debug]       Load.apply: resolveProjects took 0.2125ms
+[debug]       Load.apply: finalTransforms took 19.6319ms
+[debug]       Load.apply: config.delegates took 0.5772ms
+[debug]       Load.apply: Def.make(settings)... took 131.1255ms
+[debug]       Load.apply: structureIndex took 46.5295ms
+[debug]       Load.apply: mkStreams took 0.0029ms
+[info] loading project definition from C:\Users\OMISTAJA\OneDrive\IdeaProjects\Kasino\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[debug]     Load.loadUnit: plugins took 2205.9069ms
+[debug]     Load.loadUnit: defsScala took 0.0059ms
+[debug] [Loading] Scanning directory C:\Users\OMISTAJA\OneDrive\IdeaProjects\Kasino
+[debug]       Load.loadUnit: mkEval took 0.4819ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin)))
+[debug] Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 2.1577 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 48.9695ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: C:\Users\OMISTAJA\OneDrive\IdeaProjects\Kasino, plugins: List(<none>))) took 53.3ms
+[debug] [Loading] Done in C:\Users\OMISTAJA\OneDrive\IdeaProjects\Kasino, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 4358.4078ms
+[debug]     Load.loadUnit: cleanEvalClasses took 55.5341ms
+[debug]   Load.loadUnit(file:/C:/Users/OMISTAJA/OneDrive/IdeaProjects/Kasino/, ...) took 6621.237ms
+[debug] Load.apply: load took 6625.7792ms
+[debug] Load.apply: resolveProjects took 0.6422ms
+[debug] Load.apply: finalTransforms took 44.4425ms
+[debug] Load.apply: config.delegates took 0.4913ms
+[debug] Load.apply: Def.make(settings)... took 98.9712ms
+[debug] Load.apply: structureIndex took 40.0155ms
+[debug] Load.apply: mkStreams took 0.0037ms
+[info] set current project to Kasino (in build file:/C:/Users/OMISTAJA/OneDrive/IdeaProjects/Kasino/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(; set ideaPort in Global := 55568 ; idea-shell, None, None)
+[debug] > Exec(set ideaPort in Global := 55568, None, None)
+[info] Defining Global / ideaPort
+[info] The new value will be used by Compile / compile, Test / compile
+[debug] Defining 
+[debug] 	Global / ideaPort
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Compile / compile
+[debug] 	Test / compile
+[info] Reapplying settings...
+[info] set current project to Kasino (in build file:/C:/Users/OMISTAJA/OneDrive/IdeaProjects/Kasino/)
+[debug] > Exec(idea-shell, None, None)
