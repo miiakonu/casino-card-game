@@ -1,3 +1,6 @@
 class Card(val suit: String, val number: Int):
-  override def toString = s"$suit, $number"
+  
+  val value = number
+  
+  override def toString = s"$suit $number"
 
