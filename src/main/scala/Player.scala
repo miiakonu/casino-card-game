@@ -66,6 +66,7 @@ class Player(val name: String):
       println("Check that you can pick those cards.")
 
       // muista lisätä että samaa korttia ei voi käyttää kahdesti
+      // JA että 5+5 != 5 lol
 
 
 

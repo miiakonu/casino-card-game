@@ -7,33 +7,7 @@ import scala.collection.mutable.Buffer
 
 import scala.io.StdIn.readLine
 
-object Main extends JFXApp3:
-
-  def start() =
-
-    stage = new JFXApp3.PrimaryStage:
-      title = "UniqueProjectName"
-      width = 600
-      height = 450
-
-    val root = Pane()
-
-    val scene = Scene(parent = root)
-    stage.scene = scene
-
-    val rectangle = new Rectangle:
-      x = 275
-      y = 175
-      width = 50
-      height = 50
-      fill = Blue
-
-    root.children += rectangle
-
-  end start
-
-end Main
-
+/*
 @main
   def main() =
   val peli = Game()
@@ -66,66 +40,28 @@ end Main
   println(peli.player2.playerDeck)
 
   println("\nnew turn")
-  println("whose turn it is: " + round.playerInTurn)
+  println("whose turn it is: " + round.playerInTurn) */
 
-class Action(input: String, game: Game):
-
-    val commandText = input.trim.toLowerCase
-    val verb        = commandText.takeWhile( _ != ' ' )
-
-    val kortti   = commandText.drop(verb.length + 1).takeWhile( _ != ' ' )
-    val numero = commandText.drop(verb.length + kortti.length + 2).takeWhile( _ != ';' ).trim
-    val nostonumero = commandText.drop(verb.length + kortti.length + 2).takeWhile( _ != ';' ) // tarkista voiko poistaa
-
-    val kortit = commandText.dropWhile( _ != ';').filter( char => char != ' ' && char != ';')
-
-    def findInHand(cardsInHand: Buffer[Card], suit: String, number: Int) =
-      var kortti = cardsInHand.head
-      for card <- cardsInHand do
-        if card.suit == suit && card.number == number then
-          kortti = card
-      kortti
-          // muuta niin että tarkistaa että onhan kortti kädessä
-
-      // if !cardsInHand.forall(card => card.suit == suit && card.number == number) then
-
-    val stringsToCards: Map[String, Card] =
-      var map = Map[String, Card]()
-      for card <- game.currentRound.deck.cards do
-        map += (s"${card.suit} ${card.number}" -> card)
-      map
-
-    def toBuffer(cards: String) =
-      val buffer = cards.split(',')
-      val cardBuffer: Buffer[Card] = Buffer()
-      for card <- buffer do
-        cardBuffer += Card(card.takeWhile( _.isLetter ), card.dropWhile( _.isLetter ).toInt)
-      cardBuffer
-
-    def findInTable(cardsOnTable: Buffer[Card], otherCards: Buffer[Card]) =
-      val bufferCards: Buffer[Card] = Buffer()
-      for card <- otherCards do
-        for card2 <- cardsOnTable do
-          if card.suit == card2.suit && card.number == card2.number then
-            bufferCards += card2
-      bufferCards
-
-    def execute(actor: Player) =
-      this.verb match
-        case "play" =>
-          if actor.playerHand.exists(card => card.suit == kortti && card.number == numero.toInt) then
-            actor.playCardOntoTable(findInHand(actor.playerHand, kortti, numero.toInt))
-          else println("Play failed; check that you typed the card correctly.")
-        case "pickwith" =>
-          if actor.playerHand.exists(card => card.suit == kortti && card.number == numero.toInt) then
-            actor.pickCardsFromTable(findInHand(actor.playerHand, kortti, numero.toInt), findInTable(game.currentRound.cardsOnTable, toBuffer(kortit)))
-          else println("Pick failed; check that you typed the card correctly.")
 
 @main
   def other() =
     val peli = Game()
-    peli.currentRound.dealCards()
     println("Type q! to quit")
+
+    println("Type all the players' names:\n(The maximum number of players is five.)")
+    var names = readLine("> ").filter( _ != ' ')
+    var buffer = names.split(',')
+    def validPlayers = buffer.length <= 5 && buffer.length > 1
+    while !validPlayers do
+      println("The maximum number of players is five.")
+      names = readLine("> ").filter( _ != ' ')
+      buffer = names.split(',')
+    for name <- buffer do
+      peli.players += Player(name)
+    println("Players have been added to the game!")
+
+    peli.createRound()
+    peli.currentRound.dealCards()
 
     println("Now playing: " + peli.currentRound.playerInTurn.name )
     println("Your cards are: " + peli.currentRound.playerInTurn.playerHand.mkString(", "))
@@ -142,7 +78,6 @@ class Action(input: String, game: Game):
         println("The round has ended!")
         println("Players' points: ")
         peli.players.foreach(player => println(player.name + " " + player.points))
-
       else
         if peli.isOver then
           peli.currentRound.countPoints()
@@ -155,4 +90,4 @@ class Action(input: String, game: Game):
           println("Now playing: " + peli.currentRound.playerInTurn.name )
           println("Your cards are: " + peli.currentRound.playerInTurn.playerHand.mkString(", "))
           println("Cards on table: " + peli.currentRound.cardsOnTable.mkString(", "))
-
+          println(peli.currentRound.playerInTurn.playerDeck) //testi

@@ -1,6 +1,6 @@
 import scala.collection.mutable.Buffer
 
-class Round(val players: Buffer[Player], val dealer: Player, val deck: Deck, numberOfRound: Int):
+class Round(val players: Buffer[Player], val deck: Deck, numberOfRound: Int):
 
   var cardsOnTable: Buffer[Card] =
     val cards = deck.cards.take(4)
@@ -11,6 +11,11 @@ class Round(val players: Buffer[Player], val dealer: Player, val deck: Deck, num
     for player <- players do
       player.playerHand = deck.cards.take(4)
       deck.cards.remove(0, 4)
+
+  var dealer =
+    if players.nonEmpty then
+      players.head
+    else Player("Moi")
 
   var playerInTurn: Player = dealer
 
@@ -33,11 +38,11 @@ class Round(val players: Buffer[Player], val dealer: Player, val deck: Deck, num
       if deck.cards.nonEmpty then
         playerInTurn.playerHand += deck.cards.head
         deck.cards.remove(0)
+      if cardsOnTable.isEmpty then playerInTurn.moks += 1
       playerInTurn.cardPickSuccessful = false
       playerWhoLastPicked = playerInTurn
       playerInTurn = players(if players.indexOf(playerInTurn) + 1 <= players.size - 1 then players.indexOf(playerInTurn) + 1
         else (players.indexOf(playerInTurn) + 1) % players.size)
-
 
   def checkEnd() =
     if players.forall(_.playerHand.isEmpty) then
@@ -57,8 +62,3 @@ class Round(val players: Buffer[Player], val dealer: Player, val deck: Deck, num
     if playerWithMostSpades.size == 1 then playerWithMostSpades.head.points += 2 // jos usealla pelaajalla on suurin määrä patoja, kumpikaan ei saa niistä pisteitä
     val playerWithMostCards = players.groupBy( _.playerDeck.size).maxBy(_._1)._2
     if playerWithMostCards.size == 1 then playerWithMostCards.head.points += 1 // jos usealla pelaajalla on suurin määrä kortteja, kumpikaan ei saa niistä pistettä
-
-
-
-
-
