@@ -4,7 +4,7 @@ class Player(val name: String):
 
   var playerHand: Buffer[Card] = Buffer()
 
-  val playerDeck: Buffer[Card] = Buffer()
+  var playerDeck: Buffer[Card] = Buffer()
 
   var points: Int = 0
 
@@ -27,7 +27,7 @@ class Player(val name: String):
       println("Play successful!")
 
   def pickCardsFromTable(playedCard: Card, pickedCards: Buffer[Card]) = // method for picking up cards from the table with a certain card
-    if playerHand.contains(playedCard) then
+    if pickedCards.size == pickedCards.toSet.size && playerHand.contains(playedCard) then
       if pickedCards.size == 1 then
         if playedCard.value == pickedCards.head.number then
           playerDeck += playedCard
@@ -41,7 +41,7 @@ class Player(val name: String):
           if playedCard.value == card.number then
             matchingCards += card
           else
-            for i <- 1 until (pickedCards.size) do
+            for i <- 1 to (pickedCards.size) do
               if i == 1 then
                 val nextCard = pickedCards((pickedCards.indexOf(card) + i) % pickedCards.size)
                 if playedCard.value == card.number + nextCard.number then
@@ -54,21 +54,20 @@ class Player(val name: String):
                 val numbers = testCards.map(_.number)
                 if playedCard.value == numbers.sum then
                   matchingCards ++= testCards
-        cardPickSuccessful = matchingCards.forall(card => pickedCards.contains(card))
+        cardPickSuccessful = matchingCards.forall(card => pickedCards.contains(card)) && matchingCards.nonEmpty
     else
       cardPickSuccessful = false
     if cardPickSuccessful then
       playerDeck ++= pickedCards
       playerDeck += playedCard
+      playerDeck = playerDeck.distinct
       playerHand.remove(playerHand.indexOf(playedCard))
       println("Pick successful!")
     else
       println("Check that you can pick those cards.")
 
-      // muista lisätä että samaa korttia ei voi käyttää kahdesti
+      // muista lisätä että samaa korttia ei voi käyttää kahdesti samalla vuorolla
       // JA että 5+5 != 5 lol
 
-
-
-
   override def toString = s"$name"
+

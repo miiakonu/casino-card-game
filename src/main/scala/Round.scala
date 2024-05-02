@@ -13,13 +13,11 @@ class Round(val players: Buffer[Player], val deck: Deck, numberOfRound: Int):
       deck.cards.remove(0, 4)
 
   var dealer =
-    if players.nonEmpty then
-      players.head
-    else Player("Moi")
+    if players.nonEmpty then players.head else Player("Miia")
 
   var playerInTurn: Player = dealer
 
-  var playerWhoLastPicked: Player = dealer
+  var playerWhoLastPicked: Option[Player] = None
 
   def turnUpdate() = // updates the game situation after a turn
 
@@ -40,7 +38,7 @@ class Round(val players: Buffer[Player], val deck: Deck, numberOfRound: Int):
         deck.cards.remove(0)
       if cardsOnTable.isEmpty then playerInTurn.moks += 1
       playerInTurn.cardPickSuccessful = false
-      playerWhoLastPicked = playerInTurn
+      playerWhoLastPicked = Some(playerInTurn)
       playerInTurn = players(if players.indexOf(playerInTurn) + 1 <= players.size - 1 then players.indexOf(playerInTurn) + 1
         else (players.indexOf(playerInTurn) + 1) % players.size)
 
@@ -52,7 +50,9 @@ class Round(val players: Buffer[Player], val deck: Deck, numberOfRound: Int):
   var hasEnded: Boolean = false
 
   def countPoints() =
-    playerWhoLastPicked.playerDeck ++= cardsOnTable // player who last picked gets all the cards on the table onto their deck
+    playerWhoLastPicked match
+      case Some(player) => player.playerDeck ++= cardsOnTable // player who last picked gets all the cards on the table onto their deck
+      case None =>
     for player <- players do
       player.points += player.moks
       player.points += player.playerDeck.count( _.number == 1 )
