@@ -4,7 +4,7 @@ def printInstructions(): Unit = // welcome message
   println("When addind players separate the players' names with a comma")
   println("Play a card onto the table with the command: 'play'.\nPick cards from the table with the command: 'pick'.")
   println("When picking cards from the table, write first the card you're picking with,\nthen add a semicolon, and then the cards you want to pick separated with a comma.")
-  println("Example: heart 8; diamond 3, club 5 (when picking with heart 8).")
+  println("Example: Pick heart 8; diamond 3, club 5 (when picking with heart 8).")
   println("When playing a card, just write the card after the command 'play'.")
   println("Example: Play club 10.")
   println("Don't write the numbers that are in brackets! The number tells you the card's value when it is in your hand.")
