@@ -7,7 +7,7 @@ class Deck:
 
   val cards: Buffer[Card] =
     val bufferCards: Buffer[Card] = Buffer()
-    for i <- 1 to 4 do
+    for i <- 1 to 3 do // 13
       for suit <- suits do
         bufferCards += Card(suit, i)
     Random.shuffle(bufferCards)
