@@ -1,7 +1,7 @@
 import scala.io.StdIn.readLine
 
 def printInstructions(): Unit = // welcome message
-  println("When addind players separate the players' names with a comma")
+  println("When adding players separate the players' names with a comma")
   println("Play a card onto the table with the command: 'play'.\nPick cards from the table with the command: 'pick'.")
   println("When picking cards from the table, write first the card you're picking with,\nthen add a semicolon, and then the cards you want to pick separated with a comma.")
   println("Example: Pick heart 8; diamond 3, club 5 (when picking with heart 8).")
